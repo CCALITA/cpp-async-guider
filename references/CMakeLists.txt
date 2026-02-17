@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(stdexec-examples)
+project(cpp-async-examples)
 
 # Get stdexec
 include(CPM.cmake)
@@ -9,14 +9,14 @@ CPMAddPackage(
   GIT_TAG main
 )
 
-# Example: hello_world
-add_executable(hello_world hello_world.cpp)
-target_link_libraries(hello_world PRIVATE STDEXEC::stdexec)
+# Example 1: Parallel Data Processing
+add_executable(parallel_processing scripts/parallel_processing.cpp)
+target_link_libraries(parallel_processing PRIVATE STDEXEC::stdexec)
 
-# Example: basic_pipeline
-add_executable(basic_pipeline basic_pipeline.cpp)
-target_link_libraries(basic_pipeline PRIVATE STDEXEC::stdexec)
+# Example 2: Reliable API with Retry
+add_executable(reliable_api_call scripts/reliable_api_call.cpp)
+target_link_libraries(reliable_api_call PRIVATE STDEXEC::stdexec)
 
-# Example: concurrent_when_all
-add_executable(concurrent_when_all concurrent_when_all.cpp)
-target_link_libraries(concurrent_when_all PRIVATE STDEXEC::stdexec)
+# Example 3: Data Pipeline
+add_executable(data_pipeline scripts/data_pipeline.cpp)
+target_link_libraries(data_pipeline PRIVATE STDEXEC::stdexec)
