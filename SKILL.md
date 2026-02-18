@@ -38,18 +38,17 @@ Ask or infer:
 
 ## Step 2: Decision Tree
 
-```
-What pattern needed?
-├── Create value → just()
-├── Schedule work → schedule()
-├── Transform → then()
-├── Chain senders → let_value()
-├── Wait all → when_all()
-├── Wait any → when_any()
-├── Cancel → stop_token
-├── Error handle → let_error() / retry()
-└── Detached → start_detached()
-```
+| Need | Use |
+|------|-----|
+| Create value | just() |
+| Schedule work | schedule() |
+| Transform | then() |
+| Chain senders | let_value() |
+| Wait all | when_all() |
+| Wait any | when_any() |
+| Cancel | stop_token |
+| Error handle | let_error() / retry() |
+| Detached | start_detached() |
 
 ---
 
@@ -225,23 +224,19 @@ auto lazy = stdexec::just_from([] {
 
 ## Quick Reference
 
-```
-┌─────────────────────────────────────────────┐
-│           Decision Cheat Sheet                │
-├─────────────────────────────────────────────┤
-│ Create value → just()                      │
-│ Schedule → schedule(sched)                 │
-│ Transform → then(fn)                       │
-│ Chain → let_value(fn)                     │
-│ Parallel → when_all(s1, s2, ...)          │
-│ Any → when_any(s1, s2, ...)              │
-│ Cancel → get_stop_token()                  │
-│ Error → let_error() / retry()             │
-│ Detached → start_detached()               │
-│ Coroutine → exec::task<T>                  │
-│ Scope → exec::scope                        │
-└─────────────────────────────────────────────┘
-```
+| Pattern | Function |
+|---------|----------|
+| Create value | just() |
+| Schedule | schedule(sched) |
+| Transform | then(fn) |
+| Chain | let_value(fn) |
+| Parallel | when_all(s1, s2, ...) |
+| Any | when_any(s1, s2, ...) |
+| Cancel | get_stop_token() |
+| Error | let_error() / retry() |
+| Detached | start_detached() |
+| Coroutine | exec::task<T> |
+| Scope | exec::scope |
 
 ---
 
